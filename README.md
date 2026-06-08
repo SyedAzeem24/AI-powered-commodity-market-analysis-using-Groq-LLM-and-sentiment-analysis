@@ -308,12 +308,6 @@ Instructor: Dr Kanwal Yousaf
 
 ---
 
-##  License
-
-MIT License - See LICENSE file for details
-
----
-
 ##  Contributing
 
 Contributions welcome! Please:

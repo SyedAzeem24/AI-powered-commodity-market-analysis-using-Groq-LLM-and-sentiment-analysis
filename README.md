@@ -132,7 +132,7 @@ python -c "import nltk; nltk.download('vader_lexicon')"
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 ### Step 1: Create `.env` file
 
@@ -168,7 +168,7 @@ The app will open at: `http://localhost:8501`
 
 ---
 
-## 💡 Example Queries
+## Example Queries
 
 Try asking:
 
@@ -276,7 +276,7 @@ The application gracefully handles:
 
 ---
 
-## 🔒 Security
+##  Security
 
 - API keys stored in `.env` (never committed)
 - `.gitignore` protects sensitive files

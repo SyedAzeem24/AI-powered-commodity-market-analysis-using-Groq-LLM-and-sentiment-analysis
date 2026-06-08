@@ -1,20 +1,16 @@
-# 📊 AI-Based Commodity Price Analysis and Insight Agent
+## AI-Based Commodity Price Analysis and Insight Agent
 
 A professional AI agent that analyzes commodity markets by combining price data, news sentiment, and LLM-powered insights to explain market trends.
 
-## 🎯 Project Objective
+## Project Objective
 
-This system helps users understand commodity market dynamics by answering questions like:
-- *"Why is gold price increasing?"*
-- *"Analyze the crude oil market"*
-- *"What factors are affecting wheat prices?"*
-- *"Explain recent silver price trends"*
+This system helps users understand commodity market dynamics.
 
 **Key Point:** This is **NOT a price prediction system**. The focus is on explaining market trends and factors affecting prices.
 
 ---
 
-## ✨ Features
+## Features
 
 ### 1. **Natural Language Query Processing**
 - Accepts user queries in plain English
@@ -50,7 +46,7 @@ This system helps users understand commodity market dynamics by answering questi
 
 ---
 
-## 🏗️ Agent Architecture
+## Agent Architecture
 
 ```
 User Query
@@ -74,39 +70,39 @@ Streamlit Dashboard Display
 
 ---
 
-## 🛠️ Technology Stack
+## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| **Frontend** | Streamlit 1.28.1 |
-| **Backend** | Python 3.11+ |
-| **LLM** | Groq API (llama-3.3-70b-versatile) |
-| **Market Data** | yfinance 0.2.32 |
-| **News Source** | Google News RSS |
-| **News Parsing** | feedparser 6.0.10 |
-| **Sentiment** | NLTK VADER 3.8.1 |
-| **Visualization** | Plotly 5.18.0 |
-| **Data Processing** | pandas 2.1.3, numpy 1.26.4 |
-| **Environment** | python-dotenv 1.0.0 |
-
----
-
-## 📦 Supported Commodities
-
-| Commodity | Symbol | News Query |
-|-----------|--------|-----------|
-| Gold | GC=F | gold commodity prices |
-| Silver | SI=F | silver commodity prices |
-| Crude Oil | CL=F | crude oil prices market |
-| Natural Gas | NG=F | natural gas prices |
-| Copper | HG=F | copper commodity prices |
-| Wheat | ZW=F | wheat prices commodity |
-| Corn | ZC=F | corn prices commodity |
-| Soybeans | ZS=F | soybeans prices commodity |
+| Layer               | Technology                         |
+|---------------------|------------------------------------|
+| **Frontend**        | Streamlit 1.28.1                   |
+| **Backend**         | Python 3.11+                       |
+| **LLM**             | Groq API (llama-3.3-70b-versatile) |
+| **Market Data**     | yfinance 0.2.32                    |
+| **News Source**     | Google News RSS                    |
+| **News Parsing**    | feedparser 6.0.10                  |
+| **Sentiment**       | NLTK VADER 3.8.1                   |
+| **Visualization**   | Plotly 5.18.0                      |
+| **Data Processing** | pandas 2.1.3, numpy 1.26.4         |
+| **Environment**     | python-dotenv 1.0.0                |
 
 ---
 
-## 🚀 Installation
+## Supported Commodities
+
+| Commodity   | Symbol | News Query                |
+|-------------|--------|---------------------------|
+| Gold        | GC=F   | gold commodity prices     |
+| Silver      | SI=F   | silver commodity prices   |
+| Crude Oil   | CL=F   | crude oil prices market   |
+| Natural Gas | NG=F   | natural gas prices        |
+| Copper      | HG=F   | copper commodity prices   |
+| Wheat       | ZW=F   | wheat prices commodity    |
+| Corn        | ZC=F   | corn prices commodity     |
+| Soybeans    | ZS=F   | soybeans prices commodity |
+
+---
+
+## Installation
 
 ### Step 1: Clone the Repository
 
@@ -149,14 +145,14 @@ copy .env.example .env
 Open `.env` and replace:
 
 ```
-GROQ_API_KEY=gsk_your_actual_key_here
+GROQ_API_KEY=ur_groq_key
 ```
 
 **Get your API key:** https://console.groq.com/keys
 
 ---
 
-## ▶️ Running the Application
+## Running the App
 
 ### Windows CMD:
 
@@ -202,38 +198,8 @@ Try asking:
 
 ---
 
-## 📁 Project Structure
 
-```
-commodity-price-agent/
-│
-├── app.py                          # Main Streamlit application
-│
-├── agents/
-│   └── commodity_agent.py         # Main AI Agent orchestration
-│
-├── services/
-│   ├── market_service.py          # yfinance data fetching
-│   ├── news_service.py            # Google News RSS fetching
-│   ├── sentiment_service.py       # VADER sentiment analysis
-│   └── llm_service.py             # Groq LLM interface
-│
-├── utils/
-│   └── commodity_mapper.py        # Commodity mapping utility
-│
-├── docs/                           # Documentation
-├── screenshots/                    # UI screenshots (for README)
-│
-├── requirements.txt               # Python dependencies
-├── README.md                      # This file
-├── .gitignore                     # Git ignore rules
-├── .env.example                   # Environment template
-└── LICENSE                        # MIT License
-```
-
----
-
-## 🔧 How It Works
+## How It Works
 
 ### 1. **Query Processing**
 ```python
@@ -275,7 +241,7 @@ Streamlit renders:
 
 ---
 
-## 📊 API Services Used
+##  API Services Used
 
 ### Groq API
 - **Endpoint:** LLaMA 3.3 70B
@@ -284,29 +250,29 @@ Streamlit renders:
 - **Rate limit:** Generous free tier
 
 ### yfinance
-- **Free:** ✅ No API key required
+- **Free:**  No API key required
 - **Data:** Historical commodity prices
 - **Symbols:** Futures contracts (GC=F, CL=F, etc.)
 
 ### Google News RSS
-- **Free:** ✅ No API key required
+- **Free:**  No API key required
 - **Data:** Recent news articles
 - **Format:** RSS feeds (freely accessible)
 
 ---
 
-## ⚠️ Error Handling
+## Error Handling
 
 The application gracefully handles:
 
-| Error | Handling |
-|-------|----------|
-| Invalid commodity | Shows friendly error + supported commodities |
-| Empty query | Prompts user to enter query |
-| Missing API key | Warns and continues (LLM analysis disabled) |
-| Yahoo Finance unavailable | Uses fallback symbols |
-| RSS feed failure | Shows cached data or message |
-| Network issues | Informative error messages |
+| Error                     | Handling                                     |
+|---------------------------|----------------------------------------------|
+| Invalid commodity         | Shows friendly error + supported commodities |
+| Empty query               | Prompts user to enter query                  |
+| Missing API key           | Warns and continues (LLM analysis disabled)  |
+| Yahoo Finance unavailable | Uses fallback symbols                        |
+| RSS feed failure          | Shows cached data or message                 |
+| Network issues            | Informative error messages                   |
 
 ---
 
@@ -320,7 +286,7 @@ The application gracefully handles:
 
 ---
 
-## 📈 Future Improvements
+## Future Improvements
 
 Potential enhancements:
 
@@ -335,19 +301,20 @@ Potential enhancements:
 
 ---
 
-## 👨‍💼 Author
-
+##  Author
+Syed Azeem Ahmad
 Built for University AI Semester Project
+Instructor: Dr Kanwal Yousaf
 
 ---
 
-## 📄 License
+##  License
 
 MIT License - See LICENSE file for details
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions welcome! Please:
 
@@ -359,33 +326,4 @@ Contributions welcome! Please:
 
 ---
 
-## 📞 Support
-
-For issues or questions:
-
-1. Check the README
-2. Review project structure
-3. Check error messages
-4. Verify environment variables
-
----
-
-## 🎓 Educational Use
-
-This project demonstrates:
-
-- ✅ AI agent orchestration
-- ✅ Multi-service integration
-- ✅ NLP and sentiment analysis
-- ✅ LLM utilization
-- ✅ Full-stack development
-- ✅ Software architecture
-- ✅ Error handling
-- ✅ Clean code principles
-
-Perfect for university AI course submission!
-
----
-
-**Last Updated:** June 2026  
-**Status:** Production Ready ✅
+**Last Updated:** June 2026

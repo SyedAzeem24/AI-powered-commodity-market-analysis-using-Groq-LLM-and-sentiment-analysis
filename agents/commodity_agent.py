@@ -46,15 +46,15 @@ class CommodityAgent:
             tuple: (is_valid, message)
         """
         if not query or len(query.strip()) == 0:
-            return False, "❌ Please enter a query about a commodity"
+            return False, " Please enter a query about a commodity"
         
         detected = detect_commodity(query)
         
         if not detected:
             commodities = "Gold, Silver, Crude Oil, Natural Gas, Copper, Wheat, Corn, Soybeans"
-            return False, f"❌ No commodity detected. Try asking about: {commodities}"
+            return False, f" No commodity detected. Try asking about: {commodities}"
         
-        return True, f"✅ Detected: {detected['display_name']}"
+        return True, f" Detected: {detected['display_name']}"
     
     def analyze(self, query):
         """
@@ -93,7 +93,7 @@ class CommodityAgent:
             if not market_summary:
                 return {
                     "success": False,
-                    "error": f"❌ Unable to fetch market data for {display_name}. Please try again."
+                    "error": f" Unable to fetch market data for {display_name}. Please try again."
                 }
             
             logger.info("✅ Market data fetched")
